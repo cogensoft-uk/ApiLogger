@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="cogensoft" translate="label" sortOrder="100" class="cogensoft-tab">
+            <label>CoGenSoft Modules</label>
+        </tab>
+        <section id="cogensoft_api_logger" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>API Logger</label>
+            <tab>cogensoft</tab>
+            <resource>Cogensoft_ApiLogger::config</resource>
+            <group id="configuration" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <field id="enable_logging" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Enable Logging</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesnocustom</source_model>
+                </field>
+                <field id="include_endpoints" translate="label" type="text" sortOrder="20" showInDefault="1">
+                    <label>API Endpoint Filter</label>
+                    <comment>A comma separated list of API endpoints to log (excluding the /rest/all/V1/ prefix), leave blank to log everything</comment>
+                </field>
+                <field id="retain_history" translate="label" type="text" sortOrder="30" showInDefault="1">
+                    <label>Retain History</label>
+                    <comment>Number of days of logs to retain (leave blank to disable log flushing)</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

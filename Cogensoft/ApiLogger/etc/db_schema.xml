@@ -1,0 +1,20 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="cogensoft_api_log" resource="default" engine="innodb" comment="API Log">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="id"/>
+        <column xsi:type="varchar" name="path" length="255" nullable="false" comment="path"/>
+        <column xsi:type="varchar" name="method" length="5" nullable="false" comment="method"/>
+        <column xsi:type="text" name="parameters" nullable="true" comment="parameters"/>
+        <column xsi:type="varchar" name="ip_address" length="40" nullable="false" comment="ip_address"/>
+        <column xsi:type="datetime" name="start_time" nullable="false" comment="parametstart_timeers"/>
+        <column xsi:type="boolean" name="successful" nullable="true" comment="successful"/>
+        <column xsi:type="varchar" name="response_code" length="5" nullable="true" comment="response_code"/>
+        <column xsi:type="text" name="response_body" nullable="true" comment="response_body"/>
+        <column xsi:type="text" name="exception" nullable="true" comment="exception"/>
+        <column xsi:type="int" name="duration_in_seconds" padding="6" nullable="true" comment="duration_in_seconds"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
